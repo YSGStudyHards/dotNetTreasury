@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "饼图";
+}
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--这是个好东西，设置屏幕密度为高频，中频，底频，禁止用户手动调整缩放-->
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>饼图</title>
+
+    <script type="text/javascript" src="~/Content/js/jquery-1.5.2.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/highcharts.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/theme/grid.js"></script>
+
+    <script type="text/javascript">
+
+        var chart;
+        $(document).ready(function () {
+
+            //获取数据
+            $.ajax({
+                async: false,
+                type: 'post',
+                datatype: 'json',
+                url: '/Report/GetDataList',
+                data: { BeformDays: 7, Type:2},//获取前七天的数据，
+                success: function (Data) {
+                    console.log(Data);
+                    console.log(Data.PieDatas);
+
+                    chart = new Highcharts.Chart({
+                        chart: {
+                            renderTo: 'container',
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            defaultSeriesType: 'pie'
+                        },
+                        title: {
+                            text: '饼状图统计'
+                        },
+                        tooltip: {
+                            formatter: function () {
+                                return '<b>' + this.point.name + '</b>: ' + this.percentage + ' %';
+                            }
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true, //点击切换
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: Highcharts.theme.textColor || '#000000',
+                                    connectorColor: Highcharts.theme.textColor || '#000000',
+                                    formatter: function () {
+                                        return '<b>' + this.point.name + '</b>: ' + this.percentage + ' %';
+                                    }
+                                },
+                                showInLegend: true
+                            }
+                        },
+                        //传说是json格式但是还是采用了自己拼接数据方法才显示
+                        series: [
+                        {
+                            data:StitchingData(Data.PieDatas),
+                                
+                            // [['杭州', 45.0],
+                            //['江西', 26.8],
+                            //{ name: '湖南', y: 12.8, sliced: true, selected: true }, //选中状态
+                            //['北京', 8.5],
+                            //['上海', 6.2],
+                            //['深圳', 0.7]]
+
+                        }]
+                    });
+                }
+            })
+
+            //数据拼接
+            function StitchingData(data) {
+             
+                var Datas = new Array();
+                $.each(data, function (index, obj) {
+                    Datas.push([obj.time,obj.Count]);
+                })
+                console.log(Datas);
+
+                return Datas;
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <div id="container">
+    </div>
+</body>
+</html>

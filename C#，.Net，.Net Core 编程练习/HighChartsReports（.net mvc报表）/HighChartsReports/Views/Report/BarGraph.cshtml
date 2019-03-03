@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--这是个好东西，设置屏幕密度为高频，中频，底频，禁止用户手动调整缩放-->
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>柱状图(有没有发现呀这个和曲线图其实是一样的只是采用的展现格式不同哟哈哈)</title>
+    <script type="text/javascript" src="~/Content/js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/highcharts.js"></script>
+    <script type="text/javascript" src="~/Content/js/theme/grid.js"></script>
+
+    <script type="text/javascript">
+
+        var chart;
+        $(document).ready(function () {
+            var Time = new Array();//存储时间
+            var Count = new Array();//存储数量
+            //获取数据
+            $.ajax({
+                async: false,
+                type: 'post',
+                datatype: 'json',
+                url: '/Report/GetDataList',
+                data: { BeformDays: 7,Type:1 },//获取前七天的数据，
+                success: function (Data) {
+                    console.log(Data.Times);
+                    console.log(Data.Counts);
+                    Time = Data.Times;
+                    Count = Data.Counts;
+                }
+
+            })
+
+            //highchants样式渲染
+            chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container',//放置图表的容器
+                    plotBackgroundColor: null,//绘图背景颜色
+                    plotBorderWidth: null,//绘图边框宽度
+                    defaultSeriesType:'column'//我在这里选折曲线//图表类型样式line, spline, area, areaspline, column, bar, pie , scatter这些样式随你选
+                },
+                title: {
+                    text: '柱状图统计'
+                },
+                subtitle: {
+                    text: ''//副标题
+                },
+                xAxis: {//X轴数据
+                    categories: StitchingData(Time),//存储数组格式的那么我们自己拼接一下数据格式吧['一月份', '二月份', '三月份', '四月份', '五月份', '六月份', '七月份', '八月份', '九月份', '十月份', '十一月份', '十二月份'],
+                    labels: {
+                        rotation: -45, //字体倾斜
+                        align: 'right',
+                        style: { font: 'normal 13px 宋体' }
+                    }
+                },
+                yAxis: {//Y轴显示文字
+                    title: {
+                        text: '产量/百万'
+                    }
+                },
+                //点击事件
+                tooltip: {
+                    enabled: true,
+                    formatter: function () {
+                        return '<b>' + this.x + '</b><br/>' + this.series.name + ': ' + Highcharts.numberFormat(this.y, 1);
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: true//是否显示title
+                    }
+                },
+                series: [{
+                    name: '产量统计报表',
+                    data: StitchingData(Count), //这里也是一样的需要自己拼接数组对象[7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+                }]
+            });
+
+            //数据拼接
+            function StitchingData(data) {
+                var Datas = new Array();
+                for (var i = 0; i < data.length; i++) {
+                    Datas[i] = data[i];//将数据添加到数据中
+                }
+                console.log(Datas);
+                return Datas;
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <!--存放内容-->
+    <div id="container">
+    </div>
+</body>
+</html>

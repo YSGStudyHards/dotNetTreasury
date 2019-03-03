@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>饼图</title>
+
+    <script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+
+    <script type="text/javascript" src="js/highcharts.js"></script> 
+
+    <script type="text/javascript" src="js/theme/grid.js"></script>
+
+    <script type="text/javascript">
+
+        var chart;
+        $(document).ready(function() {
+            chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container',
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    defaultSeriesType: 'pie'
+                },
+                title: {
+                    text: 'JQuery饼图演示'
+                },
+                tooltip: {
+                    formatter: function() {
+                        return '<b>' + this.point.name + '</b>: ' + this.percentage + ' %';
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true, //点击切换
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            color: Highcharts.theme.textColor || '#000000',
+                            connectorColor: Highcharts.theme.textColor || '#000000',
+                            formatter: function() {
+                                return '<b>' + this.point.name + '</b>: ' + this.percentage + ' %';
+                            }
+                        },
+                        showInLegend: true
+                    }
+                },
+				//传说是json格式但是还是采用了自己拼接数据方法才显示
+                series: [
+				{
+                    data: [
+                        ['杭州', 45.0],
+                        ['江西', 26.8],
+                        { name: '湖南', y: 12.8, sliced: true, selected: true }, //选中状态
+                        ['北京', 8.5],
+                        ['上海', 6.2],
+                        ['深圳', 0.7]
+						]
+                }]
+                });
+            });
+    </script>
+
+</head>
+<body>
+    <div id="container">
+    </div>
+</body>
+</html>
