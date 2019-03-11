@@ -1,0 +1,48 @@
+﻿@{ 
+    Layout = null;
+}
+<html>
+<head>
+    <title>数据导入</title>
+    <link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+    <link href="~/Content/layer-v3.1.1/layer-v3.1.1/layer/theme/default/layer.css" rel="stylesheet" />
+</head>
+<body style="background-color:rgb(242, 242, 242)" ;>
+    <script type="text/javascript">
+        function IsExitsNull()
+        {
+            var upfile = $("#upfile").val();
+            if (upfile=="") {
+                layer.alert("请选择模板进行提交");
+                return false;
+            }
+            else {
+                layer.msg('数据导入中，请勿进行其他操作', { icon: 16, shade: 0.4, time: false });
+            }
+        }
+    </script>
+
+    <div class="ui-layout-center" style="width:350px;">
+        <div class="center-Panel" style="margin-top:30px;width:350px;margin-left:100px;">
+
+
+            @using (@Html.BeginForm("DataImport", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="layui-form-item">
+                    <input type="text" name="upfile" id="upfile" class="layui-input" placeholder="请选择系统Excel模板进行导入... " onclick="file.click()" readonly="readonly" style="width: 350px;" />
+                </div>
+                <div class="layui-form-item">
+                    <input type="button" onclick="file.click()" id="SelectExcel" class="layui-btn layui-btn-radius" value="浏览" />
+                    <input name="file" type="file" id="file" style="display:none" onchange="upfile.value=this.value" />
+                    <input type="submit" name="Upload" value="数据导入" onclick="return IsExitsNull()" class="layui-btn layui-btn-danger layui-btn-radius" />
+                </div>
+
+            }
+        </div>
+    </div>
+</body>
+
+</html>

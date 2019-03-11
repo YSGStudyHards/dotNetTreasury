@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.NetMVC之Npoi导入导出实例", "Asp.NetMVC之Npoi导入导出实例\Asp.NetMVC之Npoi导入导出实例.csproj", "{B1FD45DE-9CBC-425F-988E-E820EAC2412A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{238D787D-46DD-41FB-8DCE-D11B3BDF5CEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1FD45DE-9CBC-425F-988E-E820EAC2412A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1FD45DE-9CBC-425F-988E-E820EAC2412A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1FD45DE-9CBC-425F-988E-E820EAC2412A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1FD45DE-9CBC-425F-988E-E820EAC2412A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{238D787D-46DD-41FB-8DCE-D11B3BDF5CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{238D787D-46DD-41FB-8DCE-D11B3BDF5CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{238D787D-46DD-41FB-8DCE-D11B3BDF5CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{238D787D-46DD-41FB-8DCE-D11B3BDF5CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB59953B-9F7A-4A8A-BCCF-A7011821B3E5}
+	EndGlobalSection
+EndGlobal

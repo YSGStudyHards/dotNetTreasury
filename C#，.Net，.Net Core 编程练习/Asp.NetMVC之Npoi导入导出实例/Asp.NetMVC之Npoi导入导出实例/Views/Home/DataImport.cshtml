@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Content/layui/layui.js"></script>
+<script src="~/Content/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script>
+<link href="~/Content/layer-v3.1.1/layer-v3.1.1/layer/theme/default/layer.css" rel="stylesheet" />
+<script type="text/javascript">
+        $(function () {
+
+            if (@ViewBag.Columns>0) {
+                layer.alert("成功导入了"+@ViewBag.Columns+"数据！",{ title: "导入结果提示", end: function () {
+                    window.parent.location="@Url.Action("index","Home")";
+                } });
+            }
+            else {
+                layer.alert("@ViewBag.Message",{ title: "导入结果提示", end: function ()
+                {
+                    window.parent.location="@Url.Action("index", "Home")";
+                } });
+            }
+        })
+</script>

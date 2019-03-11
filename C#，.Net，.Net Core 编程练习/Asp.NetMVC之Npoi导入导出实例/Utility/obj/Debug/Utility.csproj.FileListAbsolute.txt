@@ -1,0 +1,13 @@
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\bin\Debug\Utility.dll
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\bin\Debug\Utility.pdb
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\bin\Debug\NPOI.dll
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\bin\Debug\NPOI.OOXML.dll
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\bin\Debug\NPOI.OpenXml4Net.dll
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\bin\Debug\ICSharpCode.SharpZipLib.xml
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\obj\Debug\Utility.csprojAssemblyReference.cache
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\obj\Debug\Utility.csproj.CopyComplete
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\obj\Debug\Utility.dll
+E:\MyselfGitRepository\ShipBuilding\C#，.Net，.Net Core 编程练习\Asp.NetMVC之Npoi导入导出实例\Utility\obj\Debug\Utility.pdb
