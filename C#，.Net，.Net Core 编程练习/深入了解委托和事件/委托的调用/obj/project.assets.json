@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\MyselfGitRepository\\ShipBuilding\\C#，.Net，.Net Core 编程练习\\深入了解委托和事件\\深入了解委托和事件\\委托.csproj",
-      "projectName": "委托",
-      "projectPath": "E:\\MyselfGitRepository\\ShipBuilding\\C#，.Net，.Net Core 编程练习\\深入了解委托和事件\\深入了解委托和事件\\委托.csproj",
+      "projectUniqueName": "E:\\MyselfGitRepository\\ShipBuilding\\C#，.Net，.Net Core 编程练习\\深入了解委托和事件\\委托的调用\\委托的调用.csproj",
+      "projectName": "委托的调用",
+      "projectPath": "E:\\MyselfGitRepository\\ShipBuilding\\C#，.Net，.Net Core 编程练习\\深入了解委托和事件\\委托的调用\\委托的调用.csproj",
       "packagesPath": "C:\\Users\\yaoshuanggui\\.nuget\\packages\\",
-      "outputPath": "E:\\MyselfGitRepository\\ShipBuilding\\C#，.Net，.Net Core 编程练习\\深入了解委托和事件\\深入了解委托和事件\\obj\\",
+      "outputPath": "E:\\MyselfGitRepository\\ShipBuilding\\C#，.Net，.Net Core 编程练习\\深入了解委托和事件\\委托的调用\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
